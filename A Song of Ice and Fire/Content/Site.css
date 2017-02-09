@@ -1,0 +1,66 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url('GoTMap.jpeg');
+
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Eagle Lake', cursive;
+    
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+#characterName{
+    font-family: 'Eagle Lake', cursive;
+    color:#ffffff;
+    text-shadow: 2px 2px #000000;
+
+}
+#title{
+    font-family: 'Eagle Lake', cursive;
+    color:#ffffff;
+    text-shadow:2px 2px #000000;
+    text-align:center;
+   font-size:35px;
+   
+   }
+#create{
+    font-size:25px;
+    font-family: 'Eagle Lake', cursive;
+}
+.search{
+    font-size:20px;
+    font-family: 'Eagle Lake', cursive;
+}
+.jumbotron{
+    opacity:0.8;
+    font-family:'Eagle Lake', cursive;
+    
+}
+
+#image{
+    height:512px;
+    width:512px;
+    
+
+}
+
+#description{
+    font-size:15px;
+    
+}
+
+#pageHeading{
+    font-family:'Eagle Lake', cursive;
+    color:#000000;
+    font-size:35px;
+}

@@ -1,0 +1,104 @@
+﻿@model A_Song_of_Ice_and_Fire.Models.ASOIAF
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<p class="jumbotron" id="pageHeading">Details</p>
+
+<div class="row">
+
+
+    <hr />
+    <dl id="description" class="col-md-6 jumbotron dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Allegiance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Allegiance)
+        </dd>
+
+       
+        <dt>
+            @Html.DisplayNameFor(model => model.Profile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profile)
+        </dd>
+
+
+        <dt>
+            <button type="submit" id="reveal" class="btn-default">
+               Are They Dead?
+            </button>
+            </dt>
+        <dt>
+            <br />
+            <button type="submit" id="confirm" class="btn-danger">Are you sure?</button>
+        </dt>
+
+        <dd id="profile">
+
+            @Html.DisplayFor(model => model.Are_They_Dead_)
+
+        </dd>
+    </dl>
+
+    <dl id="image" class="col-md-6">
+
+
+
+        <dd>
+            <img src="@Url.Content(Model.Image)" id="image" height="512" width="512">
+        </dd>
+
+    </dl>
+
+</div>
+<p id="actionbuttons">
+    @Html.ActionLink("Edit", "Edit", new { Model.id }, new { @class = "btn btn-default" }) |
+    @Html.ActionLink("Delete", "Delete", new { Model.id }, new { @class = "btn btn-default" })|
+
+    @Html.ActionLink("Back to List", "Index", new { Model.id }, new { @class = "btn btn-default" })
+</p>
+
+
+<script type="text/javascript">
+    document.getElementById('profile').style.display = 'none';
+    document.getElementById('confirm').style.display = 'none';
+
+    document.getElementById('reveal').addEventListener("click", spoiler, false)
+
+    function spoiler() {
+
+        document.getElementById('confirm').style.display = 'block';
+    }
+
+    document.getElementById('confirm').addEventListener("click", visibility, false);
+
+    function visibility() {
+
+
+
+        document.getElementById('profile').style.display = 'block';
+    }
+
+</script>

@@ -1,0 +1,77 @@
+﻿@model A_Song_of_Ice_and_Fire.Models.ASOIAF
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h1 class="jumbotron" id="pageHeading">Delete</h1>
+
+<h3 class="jumbotron">Are you sure you want to delete this?</h3>
+<div>
+    
+    <hr />
+    <div class="jumbotron">
+    <dl id="description" class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Allegiance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Allegiance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Are_They_Dead_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Are_They_Dead_)
+        </dd>
+
+    </dl>
+        
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index", new { Model.id }, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
+    </div>
+

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<A_Song_of_Ice_and_Fire.Models.ASOIAF>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 id="title">Are They Dead Yet?</h1>
+<h3 id="title">Your Complete Character Guide to Game of Thrones</h3>
+<br />
+
+<p id="create">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-default" })
+</p>
+
+
+<br />
+
+@using (Html.BeginForm())
+{
+    <p class="search">
+        House: @Html.DropDownList("house", "All")
+        Name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" class="btn btn-default" />
+    </p>
+}
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+
+        <div class="col-md-4">
+
+            <a href=@Url.Action("Details", new { id = item.id })>
+                <div class="thumbnail">
+                    <img src="@Url.Content(item.Image)" />
+                </div>
+            </a>
+            <div class="caption">
+                <h3 id="characterName">@Html.DisplayFor(modelItem => item.Name)</h3>
+
+                <br />
+            </div>
+        </div>
+
+
+
+
+    }
+</div>
